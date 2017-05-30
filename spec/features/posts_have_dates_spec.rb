@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.feature 'Posts show the date and time they were posted', type: :feature do
   scenario 'Posts have date and time attatched' do
+    sign_in
     visit '/posts'
     click_link 'New post'
     fill_in 'Message', with: 'Post Number One'
