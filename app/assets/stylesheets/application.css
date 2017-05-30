@@ -13,3 +13,41 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+  background-color:  white;
+}
+
+/* We need a global font, h1, h2, h3, p, navbar colour, footer colour, body colour
+ * button colours
+ */
+
+html * {
+  font-family: 'PT Sans', sans-serif;
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.8;
+  max-width: 650px;
+}
+
+footer {
+  text-align: center;
+  background-color: #AA1925;
+  color: #fff;
+}
