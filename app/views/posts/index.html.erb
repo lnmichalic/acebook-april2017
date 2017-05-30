@@ -1,4 +1,4 @@
-<% @posts.reverse.each do |post| %>
+<% @posts.order(created_at: :desc).each do |post| %>
   <p><%= post.message %></p>
 <% end %>
 
