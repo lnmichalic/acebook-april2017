@@ -2,16 +2,12 @@
   <p><%= post.message %> Posted on <%= post.created_at.strftime("%d/%m/%Y")%> at
     <%= post.created_at.strftime("%H:%M")%>
 
+    <%= form_tag("/likes", method: "post") do %>
+    <%= hidden_field_tag(:user_id, 1) %>
+    <%= hidden_field_tag(:post_id, post.id) %>
 
-
-    <form action"">
-    <input type="hidden" value="<%=post.id%>" name="post_id">
-    <input type="submit" value="Like! (4)">
-    </form>
-
-
-
-
+    <%= submit_tag "Like (#{post.likes.count})" %>
+    <% end %>
 
   </p>
 <% end %>
