@@ -9,29 +9,27 @@
   </head>
 
   <body>
-    <header>
+    <nav>
     <a href="/">
     <div id="page-logo">
     </div></a>
     <% if signed_in? %>
-    <div id="signed-in-links">
-      <ul>
   <div class="dropdown">
-  <li><button class="dropbtn">Menu</button></li>
+  <li class="dropbtn">Menu</li>
   <div class="dropdown-content">
     <a href="/">Profile</a>
     <a href="/">Account</a>
     <%= link_to 'Sign out', sign_out_path, method: :delete %></a>
   </div>
 </div>
-<li><a href="/" class="right-link">Home</a></li>
+<li><a href="/" class="right-link" >Home</a></li>
 <li><span class="right-link"> Signed in as: <%= current_user.email %></span></li>
-</ul>
-</div>
+
         <% else %>
-      <%= link_to 'Sign in', sign_in_path %>
+      <li>  <%= link_to 'Sign in', sign_in_path, { :class=>"right-link" } %></li>
     <% end %>
-  </header>
+    </div>
+  </nav>
 
     <div id="flash">
       <% flash.each do |key, value| %>

@@ -19,15 +19,17 @@ body {
   font-style: normal;
   font-weight: 300;
   font-size: 16px;
+  padding: 0;
+  margin: 0;
 }
 
-header {
+nav {
   background-color: #AB1A25;
   height: 50px;
 }
 
  #page-logo {
-   float: left;
+  float: left;
   background-image: asset-data-url("makerslogo.png");
   background-size:contain;
   width: 50px;
@@ -35,12 +37,10 @@ header {
  }
 
  .dropbtn {
-     background-color: #AB1A25;
      color: white;
      padding: 5px;
      font-size: 16px;
      border: none;
-    //  cursor: pointer;
      margin-top: 5px;
      margin-right: 20px;
      float: right;
@@ -48,6 +48,7 @@ header {
      margin-left: 10px;
      margin-top: 10px;
      line-height: normal;
+     height: 50px;
  }
 
  /* The container <div> - needed to position the dropdown content */
@@ -65,6 +66,8 @@ header {
      min-width: 160px;
      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
      z-index: 1;
+     top: 50px;
+     right: 0px;
  }
 
  /* Links inside the dropdown */
@@ -97,10 +100,9 @@ header {
  font-size: 14px;
  }
 
- #signed-in-links li{
+nav li{
  float: right;
  display: inline-block;
  margin-left: 10px;
- margin-top: 10px;
  line-height: normal;
  }
