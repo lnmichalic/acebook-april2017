@@ -1,4 +1,4 @@
-<div id="clearance" class="sign-up">
+<!-- <div id="clearance" class="sign-up">
  <h2>Sign up</h2>
 
  <form class="new_user" id="new_user" action="/users" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="F60IxC40UektDf+8hDoS9ifZ24nJTrDtyy/fQXp+QyC39SLH8ddz7DWkzR0K5M+k4DAqp0gpkEKs1XmjSwREWg==" />
@@ -17,4 +17,26 @@
 
    <div class="other-links">
    </div>
-</form></div>
+</form></div> -->
+
+<div id='clearance' class='sign-up'>
+  <h2><%= t('.title') %></h2>
+
+  <%= form_for @user do |form| %>
+
+    <div class='text-field'>
+      <%= form.text_field :email, :type => 'email', :placeholder => 'Email...' %>
+    </div>
+
+    <div class='password-field'>
+      <%= form.password_field :password, :placeholder => "Password..." %>
+    </div>
+
+    <div class='submit-field'>
+      <%= form.submit %>
+    </div>
+
+    <div class='other-links'>
+    </div>
+  <% end %>
+</div>
