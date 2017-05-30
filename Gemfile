@@ -48,8 +48,6 @@ group :development do
   gem "rubocop", "0.48.1"
   gem "rubocop-rails"
   gem "web-console", ">= 3.3.0"
-
-
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
