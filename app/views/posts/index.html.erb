@@ -2,7 +2,26 @@
 
   <%= image_tag post.image_url.to_s %>
   <%= post_presenter(post) %>
-  
+
+  <h3>Comments</h3>
+    <% post.comments.each do |comment| %>
+  <p>
+    <strong>Comment:</strong>
+    <%= comment.body %>
+  </p>
+  <% end %>
+
+  <h2>Add a comment:</h2>
+    <%= form_for([post, post.comments.build]) do |comment| %>
+  <p>
+    <%= comment.label :body %><br>
+    <%= comment.text_area :body %>
+  </p>
+    <p>
+      <%= comment.submit %>
+    </p>
+  <% end %>
+
     <% if current_user %>
       <%= form_tag("/likes", method: "post") do %>
         <%= hidden_field_tag(:user_id, current_user.id) %>
@@ -13,6 +32,7 @@
     <% end %>
 
 <% end %>
+
 <%= link_to new_post_path do %>
   New post
 <% end %>
