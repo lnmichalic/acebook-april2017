@@ -9,8 +9,11 @@ Rails.application.routes.draw do
     get '/posts' => 'clearance/users#new'
   end
 
+  resources :users, controller: 'users', only: 'create'
+
   constraints Clearance::Constraints::SignedIn.new do
     root to: "posts#index", as: :signed_in_root
     resources :posts
   end
+
 end
