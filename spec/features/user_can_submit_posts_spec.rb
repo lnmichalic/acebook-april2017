@@ -11,6 +11,7 @@ RSpec.feature "Timeline", type: :feature do
   end
 
   scenario "Can submit multi-line posts and view them as multi-line" do
+    sign_in
     visit "/posts"
     click_link "New post"
     fill_in "Message", with: "Hello,\n world!"
