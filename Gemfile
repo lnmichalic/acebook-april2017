@@ -6,7 +6,6 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-gem "carrierwave"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem "rails", "~> 5.1.1"
 # Use postgres as the database for Active Record
@@ -29,6 +28,10 @@ gem "jbuilder", "~> 2.5"
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+# Carrierwave provides an image uploader and methods for displaying images
+# that have been uploaded
+gem "carrierwave"
+
 
 group :test do
   gem "factory_girl_rails"
