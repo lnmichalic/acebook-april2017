@@ -1,17 +1,25 @@
 <% @posts.order(created_at: :desc).each do |post| %>
-
-  <%= image_tag post.image_url.to_s %>
-  <%= post_presenter(post) %>
-  
-    <% if current_user %>
-      <%= form_tag("/likes", method: "post") do %>
-        <%= hidden_field_tag(:user_id, current_user.id) %>
-        <%= hidden_field_tag(:post_id, post.id) %>
-        <% already_liked = post.likes.any?{ |like| like.user_id == current_user.id } %>
-        <%= submit_tag "Like (#{post.likes.count})", :disabled => already_liked %>
-      <% end %>
-    <% end %>
-
+  <div id="post">
+    <div id="post-body">
+      <%= image_tag post.image_url.to_s %>
+      <%= url_checker(post) %>
+    </div>
+    <div id="post-footer">
+      <div id="col-left">
+        <%= time_and_date(post) %>
+      </div>
+      <div id="col-right">
+        <% if current_user %>
+          <%= form_tag("/likes", method: "post") do %>
+            <%= hidden_field_tag(:user_id, current_user.id) %>
+            <%= hidden_field_tag(:post_id, post.id) %>
+            <% already_liked = post.likes.any?{ |like| like.user_id == current_user.id } %>
+            <%= submit_tag "Like (#{post.likes.count})", :disabled => already_liked %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+</div>
 <% end %>
 <%= link_to new_post_path do %>
   New post

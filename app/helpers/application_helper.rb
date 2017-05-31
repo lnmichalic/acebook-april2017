@@ -6,8 +6,4 @@ module ApplicationHelper
   def time_and_date(post)
     post.created_at.strftime("%d/%m/%Y at %H:%M")
   end
-
-  def post_presenter(post)
-    simple_format("#{url_checker(post)} <br>Posted on #{time_and_date(post)}")
-  end
 end
