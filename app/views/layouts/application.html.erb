@@ -12,28 +12,27 @@
 <body>
   <nav>
     <a href="/">
-      <div id="page-logo">
-      </div></a>
-      <% if signed_in? %>
+      <div id="page-logo"></div>
+    </a>
+    <% if signed_in? %>
       <div class="dropdown">
-        <li class="dropbtn"><i class="fa fa-chevron-circle-down" style="font-size:20px"></i></li>
-        <div class="dropdown-content">
-          <a href="/">Profile</a>
-          <a href="/">Account</a>
-          <%= link_to 'Sign out', sign_out_path, method: :delete %></a>
+        <div class="dropbtn"><i class="fa fa-chevron-circle-down large-icon"></i>
+          <div class="dropdown-content">
+            <a href="/">Profile</a>
+            <a href="/">Account</a>
+            <%= link_to 'Sign out', sign_out_path, method: :delete %>
+          </div>
         </div>
       </div>
-      <li><a href="/" class="right-link" >Home</a></li>
-      <li><span class="right-link"> Signed in as: <%= current_user.email %></span></li>
-
-      <% else %>
-      <li>  <%= link_to 'Sign in', sign_in_path, { :class=>"right-link" } %></li>
-      <% end %>
-    </div>
+      <a href="/" class="right-link" >Home</a>
+      <span class="right-link"> Signed in as: <%= current_user.email %></span>
+   <% else %>
+      <%= link_to 'Sign in', sign_in_path, { :class=>"right-link" } %>
+   <% end %>
   </nav>
   <div id="flash">
     <% flash.each do |key, value| %>
-    <div class="flash <%= key %>"><%= value %></div>
+      <div class="flash <%= key %>"><%= value %></div>
     <% end %>
   </div>
   <%= yield %>
