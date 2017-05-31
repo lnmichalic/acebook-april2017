@@ -1,34 +1,13 @@
-<!-- <div id="clearance" class="sign-up">
- <h2>Sign up</h2>
-
- <form class="new_user" id="new_user" action="/users" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="F60IxC40UektDf+8hDoS9ifZ24nJTrDtyy/fQXp+QyC39SLH8ddz7DWkzR0K5M+k4DAqp0gpkEKs1XmjSwREWg==" />
-   <div class="text-field">
- <input type="email" name="user[email]" id="user_email" placeholder="Email..." />
-</div>
-
-<div class="password-field">
- <input type="password" name="user[password]" id="user_password" placeholder="Password..." />
-</div>
-
-
-   <div class="submit-field">
-     <input id="sign-up-button" type="submit" name="commit" value="Sign up" data-disable-with="Sign up" />
-   </div>
-
-   <div class="other-links">
-   </div>
-</form></div> -->
-
 <div id='clearance' class='sign-up'>
-  <h2><%= t('.title') %></h2>
+  <h2>Sign up Now!!</h2>
 
   <%= form_for @user do |form| %>
 
-    <div class='text-field'>
+    <div class='text-field info'>
       <%= form.text_field :email, :type => 'email', :placeholder => 'Email...' %>
     </div>
 
-    <div class='password-field'>
+    <div class='password-field info'>
       <%= form.password_field :password, :placeholder => "Password..." %>
     </div>
 

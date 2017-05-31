@@ -27,7 +27,7 @@ input {
   box-sizing: border-box;
 }
 
-#new_user input {
+.info input {
   width: 100%;
   height: 50px;
   margin-bottom: 25px;
@@ -78,10 +78,36 @@ input {
 }
 
 .sign-in a {
-  padding: 28px;
-  color: #300409;
+  color: white;
 }
+
+#forgot {
+  float: right;
+}
+
 
 .sign-in label {
   color: #300409;
+}
+
+.submit-field input {
+  color: white;
+  background-color: transparent;
+  border-radius: 67px;
+  width: 200px;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  border: 1px solid white;
+  box-shadow: none;
+  height: 50px;
+  font-size: 25px;
+}
+
+.submit-field input:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+h2 {
+  text-align: center;
 }

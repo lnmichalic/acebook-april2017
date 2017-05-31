@@ -1,0 +1,24 @@
+<div id="clearance" class="sign-in">
+  <h2><%= t(".title") %></h2>
+
+
+<%= form_for :session, url: session_path do |form| %>
+  <div class="text-field info">
+    <%= form.text_field :email, type: 'email', placeholder: 'Email..' %>
+  </div>
+
+  <div class="password-field info">
+    <%= form.password_field :password, placeholder: 'Password...' %>
+  </div>
+
+  <div class="submit-field">
+    <%= form.submit %>
+  </div>
+
+  <div class="other-links">
+    <%= link_to ("Sign up"), sign_up_path %>
+    <%= link_to ("Forgot password?"), new_password_path, id: 'forgot' %>
+  </div>
+<% end %>
+
+</div>
