@@ -1,6 +1,5 @@
 <% @posts.order(created_at: :desc).each do |post| %>
-  <%= simple_format(post.message) %> <p>Posted on <%= post.created_at.strftime("%d/%m/%Y")%> at <%= post.created_at.strftime("%H:%M")%></p>
-
+  <%= post_presenter(post) %>
 <% end %>
 
 <%= link_to new_post_path do %>
