@@ -4,6 +4,10 @@
 
 [The card wall is here](https://trello.com/b/HPE5W1E6/acebook) (Need an invite? Ask on Slack!)
 
+## NOTE
+
+Database has been changed from SQLite to Postgresql. If you are getting an error from your latest pull request please rerun the 'quickstart' process to update the DB ORM and initialize the new DB locally.
+
 ## Quickstart
 
 First, clone this repository. Then:
