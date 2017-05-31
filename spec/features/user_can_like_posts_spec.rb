@@ -2,7 +2,6 @@ require 'rails_helper'
 require "support/features/likes_helpers"
 require "support/features/clearance_helpers"
 
-
 RSpec.feature "Likes", type: :feature do
 
   scenario "A user cannot see like button unless signed in" do
