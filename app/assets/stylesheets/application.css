@@ -14,4 +14,26 @@
  *= require_self
  */
 
-/*random comment*/
+ footer {
+   position: absolute;
+   bottom: 0;
+   left: 0;
+   width: 100%;
+   font-family: "futura-pt", Futura, "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+   font-weight: 500;
+   letter-spacing: 0.05em;
+   text-rendering: optimizeLegibility;
+   padding-left: 18cm;
+   background-color: #AA1925;
+   padding-bottom: 50px;
+   padding-top: 10px;
+   color: #fff;
+ }
+
+ #footer_link {
+   font-size: 50px;
+   font-family: verdana;
+   text-decoration: none;
+   color: #fff;
+
+ }
