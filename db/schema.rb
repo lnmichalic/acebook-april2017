@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20170530140857) do
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
+
   create_table "likes", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "post_id"
@@ -47,7 +48,9 @@ ActiveRecord::Schema.define(version: 20170530140857) do
     t.string "encrypted_password", limit: 128, null: false
     t.string "confirmation_token", limit: 128
     t.string "remember_token", limit: 128, null: false
+    t.string "name", limit: 150, null: false
     t.index ["email"], name: "index_users_on_email"
+    t.index ["name"], name: "index_users_on_name"
     t.index ["remember_token"], name: "index_users_on_remember_token"
   end
 
