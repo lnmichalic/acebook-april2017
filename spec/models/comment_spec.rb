@@ -8,8 +8,9 @@ RSpec.describe Comment, type: :model do
     expect(comment.user_id).to eq user.id
     expect(comment.post_id).to eq post.id
     expect(comment.body).to eq("This is a comment")
-    expect(comment.id).not_to be_nil
+    expect(comment).to be_valid
   end
+  
   it 'Cannot be empty' do
     user = User.create(email: "test@example.com", password: "secret")
     post = Post.create(message: "post message")
