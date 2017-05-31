@@ -9,8 +9,7 @@ RSpec.feature "Likes", type: :feature do
     make_post
     sign_out
     visit '/posts'
-    expect(page).to have_content "Post to be liked"
-    expect(page).not_to have_button "Like (0)"
+    expect(page).to have_content "Sign up"
   end
 
   scenario "A post has a like button with like count" do
