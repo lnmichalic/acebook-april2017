@@ -21,6 +21,9 @@ ActiveRecord::Schema.define(version: 20170530150347) do
     t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "posts", force: :cascade do |t|
     t.string "message"
     t.datetime "created_at", null: false
