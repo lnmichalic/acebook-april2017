@@ -31,6 +31,7 @@ gem "jbuilder", "~> 2.5"
 # Carrierwave provides an image uploader and methods for displaying images
 # that have been uploaded
 gem "carrierwave"
+gem "image_science"
 
 group :test do
   gem "factory_girl_rails"
