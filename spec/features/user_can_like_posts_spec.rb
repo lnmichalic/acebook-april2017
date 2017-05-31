@@ -1,24 +1,34 @@
 require 'rails_helper'
-require_relative "../support/features/clearance_helpers.rb"
+require "support/features/likes_helpers"
 
 RSpec.feature "Likes", type: :feature do
-  scenario "Can like posts and posts show like count" do
-    email = "jay@example.com"
-    visit "/"
-    expect(page).not_to have_button "Like"
-    click_link "Sign in"
-    click_link "Sign up"
-    fill_in "Email", with: email
-    fill_in "Password", with: "my_secret"
-    click_button "Sign up"
-    expect(page).to have_content "Signed in as: #{email}"
-    click_link 'New post'
-    fill_in 'Message', with: 'Post to be liked'
-    click_button 'Submit'
-    expect(page).to have_button "Like (0)"
-    click_button "Like (0)"
-    expect(page).to have_button "Like (1)"
-    click_button "Like (1)"
-    expect(page).to have_button "Like (2)"
+
+  scenario "Cannot see like button unless signed in" do
+    make_post
+    expect(page).not_to have_button "Like (0)"
   end
+
+  scenario "Has like button with like count" do
+    email = "name@example.com"
+    sign_in(email)
+    make_post
+    expect(page).to have_button "Like (0)"
+  end
+
+  scenario "Can like a post" do
+    email = "name@example.com"
+    sign_in(email)
+    make_post
+    click_button "Like (0)"
+    expect(page).to have_button("Like (1)", disabled: true)
+  end
+
+  scenario "Cannot like a post twice" do
+    email = "name@example.com"
+    sign_in(email)
+    make_post
+    click_button "Like (0)"
+    expect(page).not_to have_button("Like (1)")
+  end
+
 end
