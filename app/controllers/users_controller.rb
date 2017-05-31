@@ -4,8 +4,10 @@ class UsersController < Clearance::UsersController
 
     if @user.save
       sign_in @user
+      flash[:success] = "Welcome to Acebook #{@user.name}!"
       redirect_to '/'
     else
+      flash[:error] = "Have you already signed up? Please sign in"
       render template: 'users/new'
     end
   end
