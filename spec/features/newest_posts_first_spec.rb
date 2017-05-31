@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.feature 'Posts show in reverse chronological order', type: :feature do
   scenario 'User sees most recent post first' do
+    sign_in
     visit '/posts'
     click_link 'New post'
     fill_in 'Message', with: 'First Post'
@@ -9,7 +10,6 @@ RSpec.feature 'Posts show in reverse chronological order', type: :feature do
     click_link 'New post'
     fill_in 'Message', with: 'Second Post'
     click_button 'Submit'
-    save_and_open_page
     expect(first('p')).to have_content('Second Post')
   end
 end
