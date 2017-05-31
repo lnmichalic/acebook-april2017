@@ -24,7 +24,7 @@ RSpec.describe Comment, type: :model do
     expect(comment.id).to be_nil
   end
 
-  it 'Cannot be shorter than 3 characters' do
+  it 'Cannot be shorter than 2 characters' do
     user = User.create(email: "test@example.com", password: "secret")
     post = Post.create(message: "post message")
     comment = Comment.create(body: "A", post_id: post.id, user_id: user.id)
