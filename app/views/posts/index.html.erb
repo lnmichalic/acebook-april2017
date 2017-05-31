@@ -2,7 +2,7 @@
 
   <%= image_tag post.image_url.to_s %>
   <%= post_presenter(post) %>
-  
+
     <% if current_user %>
       <%= form_tag("/likes", method: "post") do %>
         <%= hidden_field_tag(:user_id, current_user.id) %>
