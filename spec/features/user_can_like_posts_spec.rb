@@ -10,14 +10,14 @@ RSpec.feature "Likes", type: :feature do
 
   scenario "Has like button with like count" do
     email = "name@example.com"
-    sign_in(email)
+    sign_user_up(email)
     make_post
     expect(page).to have_button "Like (0)"
   end
 
   scenario "Can like a post" do
     email = "name@example.com"
-    sign_in(email)
+    sign_user_up(email)
     make_post
     click_button "Like (0)"
     expect(page).to have_button("Like (1)", disabled: true)
@@ -25,7 +25,7 @@ RSpec.feature "Likes", type: :feature do
 
   scenario "Cannot like a post twice" do
     email = "name@example.com"
-    sign_in(email)
+    sign_user_up(email)
     make_post
     click_button "Like (0)"
     expect(page).not_to have_button("Like (1)")

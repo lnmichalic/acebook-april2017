@@ -1,6 +1,6 @@
 module Features
   module LikesHelpers
-    def sign_in(email)
+    def sign_user_up(email)
       visit "/"
       click_link "Sign in"
       click_link "Sign up"
