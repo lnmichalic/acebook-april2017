@@ -32,7 +32,6 @@ gem "jbuilder", "~> 2.5"
 # that have been uploaded
 gem "carrierwave"
 
-
 group :test do
   gem "factory_girl_rails"
 end
