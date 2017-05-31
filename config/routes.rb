@@ -5,7 +5,5 @@ Rails.application.routes.draw do
 
   root to: redirect('/posts')
 
-  resources :users,
-    controller: 'users',
-    only: 'create'
+  resources :users, controller: 'users', only: 'create'
 end
