@@ -9,4 +9,12 @@ RSpec.feature "Timeline", type: :feature do
     click_button "Submit"
     expect(page).to have_content("Hello, world!")
   end
+
+  scenario "Can submit multi-line posts and view them as multi-line" do
+    visit "/posts"
+    click_link "New post"
+    fill_in "Message", with: "Hello,\n world!"
+    click_button "Submit"
+    expect(page.source).to include("Hello,\n<br /> world!")
+  end
 end
