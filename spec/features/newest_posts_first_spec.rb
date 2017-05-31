@@ -10,7 +10,6 @@ RSpec.feature 'Posts show in reverse chronological order', type: :feature do
     click_link 'New post'
     fill_in 'Message', with: 'Second Post'
     click_button 'Submit'
-    save_and_open_page
     expect(first('p')).to have_content('Second Post')
   end
 end

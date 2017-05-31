@@ -1,9 +1,13 @@
 module ApplicationHelper
   def url_checker(post)
-    post.gsub(URI.regexp, '<a href="\0">\0</a>').html_safe
+    post.message.gsub(URI.regexp, '<a href="\0">\0</a>').html_safe
+  end
+
+  def time_and_date(post)
+    post.created_at.strftime("%d/%m/%Y at %H:%M")
   end
 
   def post_presenter(post)
-    simple_format("#{url_checker(post.message)}<br>Posted on #{post.created_at.strftime("%d/%m/%Y")} at #{post.created_at.strftime("%H:%M")}")
+    simple_format("#{url_checker(post)} <br>Posted on #{time_and_date(post)}")
   end
 end
