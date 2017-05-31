@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Like, type: :model do
   it 'can be created with user id and post id' do
-    user = User.create(email: "test@example.com", password: "secret")
+    user = User.create(name: "TestyMcTestFace", email: "test@example.com", password: "secret")
     post = Post.create(message: "post message")
     like = Like.create(post_id: post.id, user_id: user.id)
     expect(like.user_id).to eq user.id
