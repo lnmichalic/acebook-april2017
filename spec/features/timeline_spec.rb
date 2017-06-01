@@ -38,7 +38,7 @@ RSpec.feature 'Users can post photos to the timeline', type: :feature do
   end
 end
 
-RSpec.feature 'Users can post messages and photos to the timeline', type: :feature do
+RSpec.feature 'Users can post messages to the timeline', type: :feature do
   scenario 'Posts show the name of posting user' do
     sign_in
     user = User.first
@@ -47,6 +47,5 @@ RSpec.feature 'Users can post messages and photos to the timeline', type: :featu
     fill_in 'Message', with: 'Test post'
     click_button 'Submit'
     expect(page).to have_content "By: #{user.name}"
-    expect(page).to have_xpath("//img[contains(@src,'owl.jpg')]")
   end
 end
