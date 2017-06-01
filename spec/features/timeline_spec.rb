@@ -37,21 +37,16 @@ RSpec.feature 'Users can post photos to the timeline', type: :feature do
     expect(page).to have_xpath("//img[contains(@src,'owl.jpg')]")
   end
 end
-#
-# RSpec.feature 'Users can post photos to the timeline', type: :feature do
-#     scenario 'Posts show the name of posting user' do
-#     sign_in
-#     click_link 'New post'
-#     attach_file('post_image', Rails.root + 'spec/support/assets/owl.jpg')
-#     fill_in 'Message', with: 'Test post'
-#     click_button 'Submit'
-#
-#     user = User.last
-#     p "current user: ", current_user
-#     p "user: ", user
-#
-#
-#     expect(page).to have_content "By: #{user.name}"
-#     expect(page).to have_xpath("//img[contains(@src,'owl.jpg')]")
-#   end
-# end
+
+RSpec.feature 'Users can post messages and photos to the timeline', type: :feature do
+    scenario 'Posts show the name of posting user' do
+    sign_in
+    user = User.first
+    click_link 'New post'
+    attach_file('post_image', Rails.root + 'spec/support/assets/owl.jpg')
+    fill_in 'Message', with: 'Test post'
+    click_button 'Submit'
+    expect(page).to have_content "By: #{user.name}"
+    expect(page).to have_xpath("//img[contains(@src,'owl.jpg')]")
+  end
+end
