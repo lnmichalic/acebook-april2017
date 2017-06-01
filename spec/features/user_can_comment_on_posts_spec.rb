@@ -1,4 +1,5 @@
 require 'rails_helper'
+require "support/features/clearance_helpers"
 
 RSpec.feature 'Posts can be commented on and comments are displayed', type: :feature do
   scenario 'User can see comments' do
