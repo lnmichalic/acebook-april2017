@@ -2,6 +2,8 @@
   <%= form.label :message %>
 
   <%= form.text_area :message %>
+  <%= form.hidden_field(:user_id, value: current_user.id) %>
+
   <%= form.file_field :image %>
 
   <%= form.submit "Submit" %>
