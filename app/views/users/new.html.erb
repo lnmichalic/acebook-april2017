@@ -1,7 +1,7 @@
-<div id='clearance' class='sign-up'>
+<div id='clearance'>
   <h2>Sign up Now!!</h2>
 
-  <%= form_for @user do |form| %>
+  <%= form_for @user, html: {class: 'new-user'} do |form| %>
 
     <div class='text-field info'>
       <%= form.text_field :name, :type => 'name', placeholder: 'Name...' %>

@@ -3,7 +3,7 @@
 
   <p><%= t(".description") %></p>
 
-  <%= form_for :password, url: passwords_path, html: {class: 'new_user'} do |form| %>
+  <%= form_for :password, url: passwords_path, html: {class: 'new-user'} do |form| %>
     <div class="text-field info">
       <%= form.text_field :email, type: 'email', placeholder: "Email.." %>
     </div>
