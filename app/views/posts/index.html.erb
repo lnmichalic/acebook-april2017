@@ -7,7 +7,7 @@
     </div>
     <div id="post-footer">
       <div id="col-left">
-        By: <%= post.user.name %> at <%= time_and_date(post) %>
+        By: <%= image_tag post.user.avatar.to_s, size: User::AVATAR_SIZES[:small] %> <%= post.user.name %> at <%= time_and_date(post) %>
       </div>
       <div id="col-right">
         <% if current_user %>
