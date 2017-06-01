@@ -21,12 +21,16 @@
     },
     "SECRET_KEY_BASE": {
       "required": true
+    },
+    "CLOUDINARY_URL": {
+      "required": true
     }
   },
   "formation": {
   },
   "addons": [
-    "heroku-postgresql"
+    "heroku-postgresql",
+    "cloudinary:starter"
   ],
   "buildpacks": [
 
