@@ -14,7 +14,15 @@
  *= require_self
  */
 
- footer {
+ html {
+   position: relative;
+   min-height: 100%;
+ }
+
+ body {
+   margin: 0 0 460px;
+ }
+ .footer {
    position: absolute;
    bottom: 0;
    left: 0;
@@ -30,7 +38,7 @@
    color: #fff;
  }
 
- #footer_link {
+ .footer_link {
    font-size: 50px;
    font-family: verdana;
    text-decoration: none;
