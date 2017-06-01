@@ -23,7 +23,7 @@ RSpec.feature 'Posts show the date and time they were posted', type: :feature do
     click_button 'Submit'
     date = Time.zone.now.strftime('%d/%m/%Y')
     time = Time.zone.now.strftime('%H:%M')
-    expect(page).to have_content("Post Number One Posted on #{date} at #{time}")
+    expect(page).to have_content("#{date} at #{time}")
   end
 end
 
@@ -35,5 +35,17 @@ RSpec.feature 'Users can post photos to the timeline', type: :feature do
     fill_in 'Message', with: 'Test post'
     click_button 'Submit'
     expect(page).to have_xpath("//img[contains(@src,'owl.jpg')]")
+  end
+end
+
+RSpec.feature 'Users can post messages to the timeline', type: :feature do
+  scenario 'Posts show the name of posting user' do
+    sign_in
+    user = User.first
+    click_link 'New post'
+    attach_file('post_image', Rails.root + 'spec/support/assets/owl.jpg')
+    fill_in 'Message', with: 'Test post'
+    click_button 'Submit'
+    expect(page).to have_content "By: #{user.name}"
   end
 end
