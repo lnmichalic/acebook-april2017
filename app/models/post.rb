@@ -1,4 +1,5 @@
 class Post < ApplicationRecord
+  IMAGE_HEIGHT = 200
   has_many :likes
   has_many :comments
   attr_accessor :image
