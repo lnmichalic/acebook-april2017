@@ -33,12 +33,12 @@
       <% end %>
     </nav>
   </header>
+  <div class="header-buffer"></div>
   <div id="flash">
     <% flash.each do |key, value| %>
     <div class="flash <%= key %>"><%= value %></div>
     <% end %>
   </div>
-
   <%= yield %>
   <!-- Add same styling as header //font & background colour. Container bottom of window with no padding -->
   <footer>
