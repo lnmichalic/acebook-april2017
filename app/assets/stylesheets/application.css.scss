@@ -117,16 +117,24 @@ nav {
   font-size: 20px !important;
 }
 
-<<<<<<< HEAD
 .username {
   font-weight: bold;
-=======
+}
+
+.header-buffer {
+  padding-top: 80px;
+}
+
+.field input {
+  width:120px;
+}
+
 #post {
   padding: 3px 3px 3px 3px;
   border-style: solid;
   border-width: 2px;
-  border-color: #445561;
-  margin-top: 40px;
+  border-color: #912f2f;
+  margin-top: 20px;
   margin-right: 20%;
   margin-left: 20%;
   min-width: 500px;
@@ -135,11 +143,14 @@ nav {
 #post-body {
   background-color: #f5f5f5;
   padding: 20px 40px 20px 40px;
+  font-size: 130%;
+  font-weight: bold;
 }
 
 #post-footer {
-  background-color: #818f98;
-  padding: 20px 20px 40px 20px;
+  background-color: #b26e6e;
+  padding: 10px 10px 30px 10px;
+  color: white;
 }
 
 #col-left {
@@ -148,5 +159,4 @@ nav {
 
 #col-right {
   float: right;
->>>>>>> 84bd4891f1e4d6e0f5d61cfa5929f51cc513292c
 }
