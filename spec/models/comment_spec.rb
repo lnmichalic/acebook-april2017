@@ -10,6 +10,7 @@ RSpec.describe Comment, type: :model do
     expect(comment.user_id).to eq user.id
     expect(comment.post_id).to eq post.id
     expect(comment.body).to eq("This is a comment")
+    expect(comment.user.name).to eq("Tester")
     expect(comment).to be_valid
   end
 
