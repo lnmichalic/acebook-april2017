@@ -1,26 +1,27 @@
+#comment-container {
+  color: #445561;
+}
+
+.comment-list-item p {
+  font-size: 12px;
+  padding-left: 20px;
+  font-style: italic;
+}
+
+.comment-user-name {
+  font-weight: bold;
+}
+
 .comment-form {
-  background-color: red;
-  height:40px;
-  overflow:scroll;
+  overflow: hidden;
+  padding: 10px 20px 10px 20px;
 }
 
-.comment-box {
-  background-color:aliceblue;
-  width:80%;
-  float:left;
+.comment-col-left {
+  margin-top: 3px;
+  width: 100%;
 }
 
-.comment-header {
-  float:left;
-}
-
-.comment-input {
-  float:left;
-  width:70%;
-  margin-left: 10px;
-}
-
-.comment-submit {
-  background-color:green;
-  float:right;
+.comment-input-box {
+  width: 100%;
 }
