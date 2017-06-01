@@ -15,8 +15,7 @@ RSpec.feature 'Posts can be commented on and comments are displayed', type: :fea
     expect(page).to have_content('This is a comment, look at my comment')
   end
 
-
-  feature 'Comments have user names next to them'do
+  feature 'Comments have user names next to them' do
     scenario 'User can see name next to comments' do
       sign_in
       visit '/posts'
