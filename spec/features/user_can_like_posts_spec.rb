@@ -4,14 +4,6 @@ require "support/features/clearance_helpers"
 
 RSpec.feature "Likes", type: :feature do
 
-  scenario "A user cannot see like button unless signed in" do
-    sign_in
-    make_post
-    sign_out
-    visit '/posts'
-    expect(page).to have_content "Sign up"
-  end
-
   scenario "A post has a like button with like count" do
     sign_in
     make_post
