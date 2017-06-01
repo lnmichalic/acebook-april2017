@@ -8,6 +8,6 @@ module ApplicationHelper
   end
 
   def post_presenter(post)
-    simple_format("#{url_checker(post)} <br>Posted on #{time_and_date(post)}")
+    simple_format(url_checker(post))
   end
 end
