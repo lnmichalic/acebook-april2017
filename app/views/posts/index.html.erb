@@ -1,12 +1,15 @@
 <% @posts.order(created_at: :desc).each do |post| %>
   <div id="post">
+    <!-- This displays the post itself-->
     <div id="post-body">
       <%= image_tag post.image_url.to_s %>
       <%= post_presenter(post) %>
     </div>
+
+    <!-- This displays the footer, with name, timestamp and like button -->
     <div id="post-footer">
       <div id="col-left">
-        By: <%= post.user.name %> at <%= time_and_date(post) %>
+        <%= image_tag post.user.avatar.to_s, size: User::AVATAR_SIZES[:small] %> <%= post.user.name %> at <%= time_and_date(post) %>
       </div>
       <div id="col-right">
         <% if current_user %>
@@ -19,21 +22,25 @@
         <% end %>
       </div>
     </div>
-    <div class='comments'>
-      <h3>Comments</h3>
-      <% post.comments.each do |comment| %>
-        <p> <%= comment.user.name %> said: <%= comment.body %></p>
-      <% end %>
-    </div>
-    <div class='comment-form'>
-      <div class='comment-box'>
-        <span class='comment-header'>Add a comment:</span>
-        <%= form_for([post, post.comments.build]) do |comment| %>
-          <%= comment.hidden_field(:user_id, value: current_user.id) %>
-          <%= comment.text_area :body, class: 'comment-input' %>
-      </div>
-          <%= comment.submit class: 'submit-comment' %>
+
+    <!-- Another div for comment form and comments  -->
+    <div id='comment-footer'>
+      <div class='comment-list'>
+        <% post.comments.each do |comment| %>
+          <p> <span class='comment-user-name'> <%= image_tag comment.user.avatar.to_s, size: User::AVATAR_SIZES[:thumb] %> <%= comment.user.name %>: </span><%= comment.body %></p>
         <% end %>
+      </div>
+
+      <div class='comment-form'>
+        <div class='comment-form-text-box'>
+          <span class='comment-form-header'>Add a comment:</span>
+          <%= form_for([post, post.comments.build]) do |comment| %>
+            <%= comment.hidden_field(:user_id, value: current_user.id) %>
+            <%= comment.text_field :body, class: 'comment-input-box' %>
+        </div>
+            <%= comment.submit class: 'submit-comment' %>
+          <% end %>
+      </div>
     </div>
   </div>
 

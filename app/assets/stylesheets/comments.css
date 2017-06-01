@@ -1,26 +1,45 @@
 .comment-form {
-  background-color: red;
-  height:40px;
-  overflow:scroll;
+  overflow:hidden;
+  padding: 10px 20px 10px 20px;
 }
 
-.comment-box {
-  background-color:aliceblue;
+.comment-form-text-box {
+  margin-top: 3px;
   width:80%;
   float:left;
 }
 
-.comment-header {
+.comment-form-header {
   float:left;
+  /*margin-top: 8px;*/
+  margin-right: 10px;
+  font-size: 12px;
 }
 
-.comment-input {
+.comment-input-box {
   float:left;
-  width:70%;
+  width:60%;
+  /*height:1em;*/
   margin-left: 10px;
 }
 
-.comment-submit {
-  background-color:green;
+.submit-comment {
+  background-color: #0B2638;
+  /*margin-top: 5px;*/
+  color: white;
   float:right;
+}
+
+.comment-list p {
+  font-size: 12px;
+  padding-left: 20px;
+  font-style: italic;
+}
+
+#comment-footer {
+  color: #445561;
+}
+
+.comment-user-name {
+  font-weight: bold;
 }
