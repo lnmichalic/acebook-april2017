@@ -22,7 +22,7 @@
     <div>
       <h3>Comments</h3>
       <% post.comments.each do |comment| %>
-        <p> <%= comment.body %> by <%= comment.user.name %> </p>
+        <p> <%= comment.user.name %> said <%= comment.body %></p>
       <% end %>
     </div>
     <div>
