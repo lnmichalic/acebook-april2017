@@ -17,13 +17,6 @@ RSpec.describe Post, type: :model do
   it 'belongs to a user' do
     user = User.create(name: "User Name", email: "test@example.com",
     password: "my_secret")
-    post = user.posts.create(message: "this is the post message")
-    expect(post.user).to eq user
-  end
-
-  it 'belongs to a user' do
-    user = User.create(name: "User Name", email: "test@example.com",
-    password: "my_secret")
     post = Post.create(message: 'post message', user_id: user.id )
     expect(post.user).to eq user
   end
