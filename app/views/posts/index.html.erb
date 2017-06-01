@@ -18,7 +18,7 @@
   <% post.comments.each do |comment| %>
     <p>
       <strong>Comment:</strong>
-      <%= comment.body %>
+      <%= comment.body %> by <%= comment.user.name %>
     </p>
   <% end %>
 
@@ -26,6 +26,7 @@
   Add a comment:
   <%= form_for([post, post.comments.build]) do |comment| %>
     <p>
+      <%= comment.hidden_field(:user_id, value: current_user.id) %>
       <%= comment.label :body %><br>
       <%= comment.text_area :body %>
     </p>
