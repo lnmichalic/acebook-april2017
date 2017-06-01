@@ -5,7 +5,6 @@ class ImageUploader < CarrierWave::Uploader::Base
   # include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
 
-
   # If application runs in production environment it saves the pictures to the Cloudinary cloud attached to Maker's Heroku account, otherwise
   # it saves it to the local /public/uploads folder.
   if Rails.env.production?
