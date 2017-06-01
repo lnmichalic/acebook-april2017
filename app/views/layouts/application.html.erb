@@ -16,11 +16,11 @@
       <%= link_to 'Sign in', sign_in_path %>
     <% end %>
 
-    <div id="flash">
       <% flash.each do |key, value| %>
-        <div class="flash_<%=key%>"><%= value %></div>
+      <div class="flash flash_<%=key%>">
+        <div><%= value %></div>
+      </div>
       <% end %>
-    </div>
 
     <%= yield %>
   </body>
