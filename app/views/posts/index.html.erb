@@ -33,7 +33,6 @@
       Add a comment:
       <%= form_for([post, post.comments.build]) do |comment| %>
         <p>
-          <!-- <%= comment.label :body %><br> -->
           <%= comment.text_area :body %>
         </p>
         <p>
