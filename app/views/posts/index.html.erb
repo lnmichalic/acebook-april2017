@@ -1,6 +1,5 @@
 <div class="header-buffer"></div>
 <% @posts.order(created_at: :desc).each do |post| %>
-
   <div id="post">
     <div id="post-body">
       <%= image_tag post.image_url.to_s %>
@@ -24,21 +23,15 @@
     <div>
       <h3>Comments</h3>
       <% post.comments.each do |comment| %>
-        <p>
-          <span class="username">This will be updated to name:</span>
-          <%= comment.body %>
-        </p>
+        <p> <%= comment.user.name %> said: <%= comment.body %></p>
       <% end %>
     </div>
     <div>
       Add a comment:
       <%= form_for([post, post.comments.build]) do |comment| %>
-        <p>
-          <%= comment.text_area :body %>
-        </p>
-        <p>
-          <%= comment.submit %>
-        </p>
+        <%= comment.hidden_field(:user_id, value: current_user.id) %>
+        <p> <%= comment.text_area :body %></p>
+        <p> <%= comment.submit %> </p>
       <% end %>
     </div>
   </div>
