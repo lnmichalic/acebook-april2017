@@ -1,0 +1,26 @@
+.comment-form {
+  background-color: red;
+  height:40px;
+  overflow:scroll;
+}
+
+.comment-box {
+  background-color:aliceblue;
+  width:80%;
+  float:left;
+}
+
+.comment-header {
+  float:left;
+}
+
+.comment-input {
+  float:left;
+  width:70%;
+  margin-left: 10px;
+}
+
+.comment-submit {
+  background-color:green;
+  float:right;
+}

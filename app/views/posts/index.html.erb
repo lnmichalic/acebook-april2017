@@ -19,23 +19,26 @@
         <% end %>
       </div>
     </div>
-    <div>
+    <div class='comments'>
       <h3>Comments</h3>
       <% post.comments.each do |comment| %>
         <p> <%= comment.user.name %> said: <%= comment.body %></p>
       <% end %>
     </div>
-    <div>
-      Add a comment:
-      <%= form_for([post, post.comments.build]) do |comment| %>
-        <%= comment.hidden_field(:user_id, value: current_user.id) %>
-        <p> <%= comment.text_area :body %></p>
-        <p> <%= comment.submit %> </p>
-      <% end %>
+    <div class='comment-form'>
+      <div class='comment-box'>
+        <span class='comment-header'>Add a comment:</span>
+        <%= form_for([post, post.comments.build]) do |comment| %>
+          <%= comment.hidden_field(:user_id, value: current_user.id) %>
+          <%= comment.text_area :body, class: 'comment-input' %>
+      </div>
+          <%= comment.submit class: 'submit-comment' %>
+        <% end %>
     </div>
   </div>
-  <% end %>
 
-  <%= link_to new_post_path do %>
-    New post
-  <% end %>
+<% end %>
+
+<%= link_to new_post_path do %>
+  New post
+<% end %>
