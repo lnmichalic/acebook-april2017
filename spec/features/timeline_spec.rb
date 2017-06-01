@@ -39,7 +39,7 @@ RSpec.feature 'Users can post photos to the timeline', type: :feature do
 end
 
 RSpec.feature 'Users can post messages and photos to the timeline', type: :feature do
-    scenario 'Posts show the name of posting user' do
+  scenario 'Posts show the name of posting user' do
     sign_in
     user = User.first
     click_link 'New post'
