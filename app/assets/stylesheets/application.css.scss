@@ -13,12 +13,21 @@
 *= require_tree .
 *= require_self
 */
+html {
+  position: relative;
+  min-height: 100%;
+}
 
 body {
   font-family: futura-pt, sans-serif;
   font-style: normal;
   font-weight: 300;
-  margin: 0;
+
+  padding: 0;
+  text-rendering: optimizeLegibility;
+  letter-spacing: 0.05em;
+  margin: 0 0 250px;
+
 }
 
 
