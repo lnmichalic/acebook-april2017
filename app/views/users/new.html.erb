@@ -14,10 +14,12 @@
     <div class='password-field info'>
       <%= form.password_field :password, placeholder: "Password..." %>
     </div>
-
-    <div class='text-field'>
-      <%= form.label :avatar %>
-      <%= form.file_field :avatar %>
+    <div class="choose-file">
+    <input id="uploadFile" placeholder="Avatar File" disabled="disabled" />
+  </div>
+    <div class='fileUpload'>
+        Upload Avatar
+      <%= form.file_field :avatar, class: "upload" %>
     </div>
 
     <div class='submit-field'>
