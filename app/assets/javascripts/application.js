@@ -22,6 +22,6 @@ function ready(fn) {
 
 ready(function() {
   document.getElementById("user_avatar").onchange = function () {
-    document.getElementById("upload_file").value = this.value;
+    document.getElementById("upload_file").value = this.files[0].name;
   };
 });
