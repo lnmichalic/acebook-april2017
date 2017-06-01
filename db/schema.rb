@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(version: 20170531150933) do
     t.string "confirmation_token", limit: 128
     t.string "remember_token", limit: 128, null: false
     t.string "name", limit: 150, null: false
+    t.string "avatar"
     t.index ["email"], name: "index_users_on_email"
     t.index ["name"], name: "index_users_on_name"
     t.index ["remember_token"], name: "index_users_on_remember_token"
@@ -64,4 +65,5 @@ ActiveRecord::Schema.define(version: 20170531150933) do
   add_foreign_key "likes", "users"
   add_foreign_key "posts", "likes"
   add_foreign_key "posts", "users"
+
 end
