@@ -1,40 +1,41 @@
 <% @posts.order(created_at: :desc).each do |post| %>
-
-  <%= image_tag post.image_url.to_s %>
-  <%= post_presenter(post) %>
-  By: <%= post.user.name %>
-
-
-  <% if current_user %>
-    <%= form_tag("/likes", method: "post") do %>
-      <%= hidden_field_tag(:user_id, current_user.id) %>
-      <%= hidden_field_tag(:post_id, post.id) %>
-      <% already_liked = post.likes.any?{ |like| like.user_id == current_user.id } %>
-      <%= submit_tag "Like (#{post.likes.count})", :disabled => already_liked %>
-   <% end %>
+  <div id="post">
+    <div id="post-body">
+      <%= image_tag post.image_url.to_s %>
+      <%= post_presenter(post) %>
+    </div>
+    <div id="post-footer">
+      <div id="col-left">
+        By: <%= post.user.name %> at <%= time_and_date(post) %>
+      </div>
+      <div id="col-right">
+        <% if current_user %>
+          <%= form_tag("/likes", method: "post") do %>
+            <%= hidden_field_tag(:user_id, current_user.id) %>
+            <%= hidden_field_tag(:post_id, post.id) %>
+            <% already_liked = post.likes.any?{ |like| like.user_id == current_user.id } %>
+            <%= submit_tag "Like (#{post.likes.count})", :disabled => already_liked %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+    <div>
+      <h3>Comments</h3>
+      <% post.comments.each do |comment| %>
+        <p> <%= comment.user.name %> said: <%= comment.body %></p>
+      <% end %>
+    </div>
+    <div>
+      Add a comment:
+      <%= form_for([post, post.comments.build]) do |comment| %>
+        <%= comment.hidden_field(:user_id, value: current_user.id) %>
+        <p> <%= comment.text_area :body %></p>
+        <p> <%= comment.submit %> </p>
+      <% end %>
+    </div>
+  </div>
   <% end %>
 
-  <h3>Comments</h3>
-  <% post.comments.each do |comment| %>
-    <p>
-      <strong>Comment:</strong>
-      <%= comment.body %>
-    </p>
+  <%= link_to new_post_path do %>
+    New post
   <% end %>
-
-
-  Add a comment:
-  <%= form_for([post, post.comments.build]) do |comment| %>
-    <p>
-      <%= comment.label :body %><br>
-      <%= comment.text_area :body %>
-    </p>
-    <p>
-      <%= comment.submit %>
-    </p>
-  <% end %>
-<% end %>
-
-<%= link_to new_post_path do %>
-  New post
-<% end %>
