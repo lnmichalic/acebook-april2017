@@ -22,7 +22,7 @@
     <div>
       <h3>Comments</h3>
       <% post.comments.each do |comment| %>
-        <p> <%= image_tag post.user.avatar.to_s, size: User::AVATAR_SIZES[:small] %> <%= comment.user.name %> said: <%= comment.body %></p>
+        <p> <%= image_tag comment.user.avatar.to_s, size: User::AVATAR_SIZES[:small] %> <%= comment.user.name %> said: <%= comment.body %></p>
       <% end %>
     </div>
     <div>
