@@ -15,14 +15,14 @@
  */
 
  .footer {
-   position: absolute;
+   position: fixed;
    bottom: 0;
    left: 0;
    width: 100%;
    padding-left: 35%;
-   background-color: #AA1925;
-   padding-bottom: 50px;
-   padding-top: 10px;
+   background-color: #964040;
+   padding-bottom: 0px;
+   padding-top: 0px;
    color: #fff;
  }
  .footer_link {
