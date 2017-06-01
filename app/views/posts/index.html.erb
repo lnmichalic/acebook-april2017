@@ -7,7 +7,7 @@
     </div>
     <div id="post-footer">
       <div id="col-left">
-        By: <%= post.user.name ? post.user.name : "Anonymous" %> at <%= time_and_date(post) %>
+        By: <%= post.user ? post.user.name : "Anonymous" %> at <%= time_and_date(post) %>
       </div>
       <div id="col-right">
         <% if current_user %>
