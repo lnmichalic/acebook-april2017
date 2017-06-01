@@ -1,4 +1,5 @@
 <% @posts.order(created_at: :desc).each do |post| %>
+
   <div id="post">
     <div id="post-body">
       <%= image_tag post.image_url.to_s %>
@@ -20,6 +21,7 @@
       </div>
     </div>
 </div>
+
 <% end %>
 <%= link_to new_post_path do %>
   New post
