@@ -1,7 +1,8 @@
 <% @posts.order(created_at: :desc).each do |post| %>
+
   <div id="post">
     <div id="post-body">
-      <%= image_tag post.image_url.to_s %>
+      <%= image_tag post.image_url.to_s, height: Post::IMAGE_HEIGHT %>
       <%= post_presenter(post) %>
     </div>
     <div id="post-footer">
@@ -34,6 +35,7 @@
       <% end %>
     </div>
   </div>
+
   <% end %>
 
   <%= link_to new_post_path do %>
