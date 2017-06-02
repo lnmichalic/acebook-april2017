@@ -10,7 +10,6 @@
 </head>
 
 <body>
-  <header>
     <nav>
       <a href="/">
         <div id="page-logo"></div>
@@ -32,7 +31,8 @@
       <%= link_to 'Sign in', sign_in_path %>
     <% end %>
   </nav>
-  
+  <div class="header-buffer"></div>
+
     <div id="flash">
       <% flash.each do |key, value| %>
         <div class="flash flash-<%= key %>">
@@ -46,7 +46,7 @@
         <!-- Add styling to center -->
         <p>Made with love by the #April2017 <a class="footer-link" href="http://makersacademy.com">Makers Academy</a> cohort</p>
       </div>
-      
+
     </footer>
   </body>
 </html>
