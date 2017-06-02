@@ -18,8 +18,8 @@
             <%= hidden_field_tag(:user_id, current_user.id) %>
             <%= hidden_field_tag(:post_id, post.id) %>
             <% already_liked = post.likes.any?{ |like| like.user_id == current_user.id } %>
-            <%= submit_tag "Like", :disabled => already_liked, :class => "like_button", :onclick => "return like_count(#{post.id}, #{post.likes.count})" %>
-            <div class="like_count" id="count_<%= post.id %>"><%= post.likes.count %></div>
+            <%= submit_tag "Like", :disabled => already_liked, :class => "like-button", :onclick => "return likeCount(#{post.id}, #{post.likes.count})" %>
+            <div id="count-<%= post.id %>" class="like-count"><%= post.likes.count %></div>
           <% end %>
         <% end %>
       </div>

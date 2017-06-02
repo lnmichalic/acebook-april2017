@@ -1,14 +1,8 @@
-// Place all the styles related to the Likes controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
-.like_button, .like_count
-{
+.like-button, .like-count {
   display:inline;
 }
 
-.like_count
-{
+.like-count {
   width: 32px;
   padding: 5px;
   border-radius: 4px;
@@ -20,8 +14,7 @@
   transition: all .1s;
 }
 
-.like_button
-{
+.like-button {
   width: 60px;
   padding: 5px;
   border-radius: 2px;
@@ -33,8 +26,7 @@
   transition: all .1s;
 }
 
-.like_button:hover
-{
+.like-button:hover {
   border: solid 2px #fff;
   background-color: rgba(255, 255, 255, .4);
   box-shadow: 0 0 10px #fff;

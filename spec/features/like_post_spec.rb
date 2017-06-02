@@ -15,7 +15,7 @@ RSpec.feature "Like Post Functionality", type: :feature do
     make_post
     click_button "Like"
     visit '/'
-    expect(page).to have_content("1")
+    expect(page.source).to include('class="like-count">1</div>')
   end
 
   scenario "A user cannot like a post twice" do
