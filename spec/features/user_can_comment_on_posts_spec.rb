@@ -26,6 +26,34 @@ RSpec.feature 'Posts can be commented on and comments are displayed', type: :fea
       click_button 'Create Comment'
       expect(page).to have_current_path('/posts')
       expect(page).to have_content('TestyMcTestFace said: This is a comment, look at my comment')
+
+    end
+  end
+
+  feature 'Comments can be deleted' do
+    scenario 'Click delete removes the comment' do
+      sign_in
+      visit '/posts'
+      click_link 'New post'
+      fill_in 'Message', with: 'First Post'
+      click_button 'Submit'
+      fill_in 'comment[body]', with: 'This is a comment, look at my comment'
+      click_button 'Create Comment'
+      click_link 'Delete Comment'
+      expect(page).to_not have_content('TestyMcTestFace said: This is a comment, look at my comment')
+    end
+
+    scenario 'Can only delete personal comment' do
+      sign_in
+      visit '/posts'
+      click_link 'New post'
+      fill_in 'Message', with: 'First Post'
+      click_button 'Submit'
+      fill_in 'comment[body]', with: 'This is a comment, look at my comment'
+      click_button 'Create Comment'
+      click_link 'Sign out'
+      sign_up_with('ahmed', 'egypt@egypt.com', 'tron123')
+      expect(page).to_not have_content('Delete Comment')
     end
   end
 end
