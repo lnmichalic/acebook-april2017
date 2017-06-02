@@ -1,4 +1,3 @@
-require 'json'
 
 class PostsController < ApplicationController
   def new

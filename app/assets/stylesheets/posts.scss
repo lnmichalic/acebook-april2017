@@ -1,0 +1,28 @@
+#post {
+  padding: 3px 3px 3px 3px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #445561;
+  margin-top: 40px;
+  margin-right: 20%;
+  margin-left: 20%;
+  min-width: 500px;
+}
+
+#post-body {
+  background-color: #f5f5f5;
+  padding: 20px 40px 20px 40px;
+}
+
+#post-footer {
+  background-color: #818f98;
+  padding: 20px 20px 40px 20px;
+}
+
+#col-left {
+  float: left;
+}
+
+#col-right {
+  float: right;
+}

@@ -1,5 +1,4 @@
 <% @posts.order(created_at: :desc).each do |post| %>
-
   <div id="post">
     <div id="post-body">
       <%= image_tag post.image_url.to_s %>
@@ -15,11 +14,8 @@
             <%= hidden_field_tag(:user_id, current_user.id) %>
             <%= hidden_field_tag(:post_id, post.id) %>
             <% already_liked = post.likes.any?{ |like| like.user_id == current_user.id } %>
-            <%= submit_tag "Like", :disabled => already_liked, :id => "button_#{post.id}" %>
+            <%= submit_tag "Like", :disabled => already_liked, :onclick => "return like_count(#{post.id}, #{post.likes.count})" %>
             <div id="count_<%= post.id %>"><%= post.likes.count %></div>
-            <script type="text/javascript">
-              var post_like_count = <%= post.likes.count %>;
-            </script>
           <% end %>
         <% end %>
       </div>
@@ -52,6 +48,3 @@
   <%= link_to new_post_path do %>
     New post
   <% end %>
-  <script type="text/javascript">
-    var count = <%= @posts.count %>
-  </script>
