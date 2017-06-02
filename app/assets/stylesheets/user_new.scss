@@ -20,13 +20,24 @@ body {
   text-align: right;
 }
 
-.welcome-text-content {
+.welcome-text-quote {
   font-size: 30px;
     color: #fff;
     font-weight: 400;
     float: right;
     text-align: right;
     font-style: italic;
+    margin-left: 100px;
+}
+
+.welcome-text-content {
+  font-size: 20px;
+    color: #fff;
+    font-weight: 400;
+    float: right;
+    text-align: right;
+    margin-left: 100px;
+    margin-top: 20px;
 }
 
 .welcome-text-container {
