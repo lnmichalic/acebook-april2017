@@ -3,4 +3,4 @@
 
 function like_count(post_id, likes) {
   document.getElementById('count_' + post_id).innerHTML = likes + 1;
-}
+};
