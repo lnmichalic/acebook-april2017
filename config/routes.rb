@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     root to: "clearance/users#new"
     get '/posts' => 'clearance/users#new'
   end
-
+  
   resources :users, controller: 'users', only: 'create'
 
   constraints Clearance::Constraints::SignedIn.new do
