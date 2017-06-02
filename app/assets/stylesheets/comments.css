@@ -1,0 +1,28 @@
+
+.comment-container {
+  color: #445561;
+}
+
+.comment-list-item p {
+  font-size: 12px;
+  padding-left: 20px;
+  font-style: italic;
+}
+
+.comment-user-name {
+  font-weight: bold;
+}
+
+.comment-form {
+  overflow: hidden;
+  padding: 10px 20px 10px 20px;
+}
+
+.comment-col-left {
+  margin-top: 3px;
+  width: 100%;
+}
+
+.comment-input-box {
+  width: 100%;
+}
