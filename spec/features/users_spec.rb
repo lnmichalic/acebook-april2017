@@ -22,12 +22,12 @@ RSpec.feature "Timeline", type: :feature do
   end
 
   scenario 'user can click on links posted' do
-   sign_in
-   visit '/posts'
-   click_link 'New post'
-   fill_in 'Message', with: 'http://rubyonrails.org/'
-   click_button 'Submit'
-   expect(page).to have_link('', href: 'http://rubyonrails.org/')
+    sign_in
+    visit '/posts'
+    click_link 'New post'
+    fill_in 'Message', with: 'http://rubyonrails.org/'
+    click_button 'Submit'
+    expect(page).to have_link('', href: 'http://rubyonrails.org/')
   end
 
   scenario 'User can see comments' do
