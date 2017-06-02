@@ -18,7 +18,6 @@ gem "sass-rails", "~> 5.0"
 gem "uglifier", ">= 1.3.0"
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
-gem "json"
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem "jbuilder", "~> 2.5"
 # Use Redis adapter to run Action Cable in production
@@ -31,6 +30,8 @@ gem "jbuilder", "~> 2.5"
 # Carrierwave provides an image uploader and methods for displaying images
 # that have been uploaded
 gem "carrierwave"
+# Heroku's cloud storage to store our images
+gem "cloudinary"
 
 group :test do
   gem "factory_girl_rails"
