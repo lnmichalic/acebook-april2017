@@ -25,7 +25,7 @@ RSpec.feature 'Posts can be commented on and comments are displayed', type: :fea
       fill_in 'comment[body]', with: 'This is a comment, look at my comment'
       click_button 'Create Comment'
       expect(page).to have_current_path('/posts')
-      expect(page).to have_content('TestyMcTestFace said: This is a comment, look at my comment')
+      expect(page).to have_content('TestyMcTestFace: This is a comment, look at my comment')
 
     end
   end
@@ -40,7 +40,7 @@ RSpec.feature 'Posts can be commented on and comments are displayed', type: :fea
       fill_in 'comment[body]', with: 'This is a comment, look at my comment'
       click_button 'Create Comment'
       click_link 'Delete Comment'
-      expect(page).to_not have_content('TestyMcTestFace said: This is a comment, look at my comment')
+      expect(page).to_not have_content('TestyMcTestFace: This is a comment, look at my comment')
     end
 
     scenario 'Can only delete personal comment' do

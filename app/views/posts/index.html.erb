@@ -32,8 +32,10 @@
     <div class='comment-list-item'>
       <% post.comments.each do |comment| %>
         <p> <span class='comment-user-name'> <%= comment.user.name %>: </span><%= comment.body %></p>
-        <%= link_to 'Delete Comment',  post_comment_path(comment.id, comment),   method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% if comment.user.id == current_user.id %>
+          <%= link_to 'Delete Comment',  post_comment_path(comment.id, comment),   method: :delete, data: { confirm: 'Are you sure?' } %>
         <% end %>
+      <% end %>
     </div>
 
     <!-- Here is where the comment form lives -->
