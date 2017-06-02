@@ -1,8 +1,6 @@
 {
   "name": "acebook-april2017",
-  "scripts": {
-    "postdeploy": "bundle exec rake db:migrate"
-  },
+  "scripts": { },
   "env": {
     "LANG": {
       "required": true

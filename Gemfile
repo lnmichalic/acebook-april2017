@@ -31,6 +31,8 @@ gem "jbuilder", "~> 2.5"
 # Carrierwave provides an image uploader and methods for displaying images
 # that have been uploaded
 gem "carrierwave"
+# Heroku's cloud storage to store our images
+gem "cloudinary"
 
 group :test do
   gem "factory_girl_rails"
