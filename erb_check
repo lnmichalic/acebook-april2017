@@ -1,0 +1,15 @@
+#!/bin/sh
+echo "This command will only work correctly on CI"
+echo "Elsewhere it may give strange results"
+echo "To fix locally, run:"
+echo "  find app/views -type f | xargs htmlbeautifier -b 1"
+
+gem install htmlbeautifier
+
+find app/views -type f | xargs bundle exec htmlbeautifier -b 1
+
+git --no-pager diff --exit-code app/views
+if [ $? -ne 0 ] ; then
+  echo "ERB Indentation Inconsistencies Detected"
+  exit 1
+fi

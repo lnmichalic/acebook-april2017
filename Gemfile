@@ -60,3 +60,6 @@ gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Use clearance for authentication
 gem "clearance"
+
+# Use HTMLBeautifier for formatting ERB
+gem "htmlbeautifier"
