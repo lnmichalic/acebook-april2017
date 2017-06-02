@@ -30,22 +30,23 @@
       <span class="right-link username"><%= current_user.name %></span><span class="right-link">Signed in as: </span>
       <% else %>
       <%= link_to 'Sign in', sign_in_path %>
-      <% end %>
-    </nav>
-  </header>
-  <div class="header-buffer"></div>
-  <div id="flash">
-    <% flash.each do |key, value| %>
-    <div class="flash <%= key %>"><%= value %></div>
     <% end %>
-  </div>
-  <%= yield %>
-  <!-- Add same styling as header //font & background colour. Container bottom of window with no padding -->
-  <footer>
-    <div class='footer'>
-      <!-- Add styling to center -->
-      <p>Made with love by the #April2017 <a class="footer-link" href="http://makersacademy.com">Makers Academy</a> cohort</p>
-    </div>
-  </footer>
-</body>
+  </nav>
+  
+    <div id="flash">
+      <% flash.each do |key, value| %>
+        <div class="flash flash-<%= key %>">
+          <%= value %>
+        </div>
+      <% end %>
+    <%= yield %>
+    <!-- Add same styling as header //font & background colour. Container bottom of window with no padding -->
+    <footer>
+      <div class='footer'>
+        <!-- Add styling to center -->
+        <p>Made with love by the #April2017 <a class="footer-link" href="http://makersacademy.com">Makers Academy</a> cohort</p>
+      </div>
+      
+    </footer>
+  </body>
 </html>
