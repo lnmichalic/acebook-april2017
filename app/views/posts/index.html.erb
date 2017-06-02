@@ -6,6 +6,7 @@
     <% end %>
     <%= post_presenter(post) %>
   </div>
+
   <div id="post-footer">
     <div id="col-left">
       By: <%= image_tag post.user.avatar.to_s, size: User::AVATAR_SIZES[:small] %> <%= post.user.name %> at <%= time_and_date(post) %>
@@ -21,6 +22,7 @@
       <% end %>
     </div>
   </div>
+
   <!-- Another div for comment form and comments  -->
   <div class='comment-container'>
     <!-- Comments are listed in this part of the div -->
@@ -32,6 +34,7 @@
       <% end %>
       <% end %>
     </div>
+
     <!-- Here is where the comment form lives -->
     <div class='comment-form'>
       <div class='comment-col-left float-left'>
@@ -44,6 +47,7 @@
     </div>
   </div>
 </div>
+
 <% end %>
 <%= link_to new_post_path, id: "new-posts" do %>
 New post
