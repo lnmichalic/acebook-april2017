@@ -26,7 +26,6 @@ RSpec.feature 'Posts can be commented on and comments are displayed', type: :fea
       click_button 'Create Comment'
       expect(page).to have_current_path('/posts')
       expect(page).to have_content('TestyMcTestFace: This is a comment, look at my comment')
-
     end
   end
 
