@@ -45,6 +45,6 @@ RSpec.feature 'Users can post messages to the timeline', type: :feature do
     attach_file('post_image', Rails.root + 'spec/support/assets/owl.jpg')
     fill_in 'Message', with: 'Test post'
     click_button 'Submit'
-    expect(page).to have_content "By: TestyMcTestFace"
+    expect(page).to have_content "TestyMcTestFace"
   end
 end
