@@ -8,13 +8,14 @@
   <%= javascript_include_tag 'application' %>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-  
+
 <body>
-  <nav>
-    <a href="/">
-      <div id="page-logo"></div>
-    </a>
-    <% if signed_in? %>
+  <header>
+    <nav>
+      <a href="/">
+        <div id="page-logo"></div>
+      </a>
+      <% if signed_in? %>
       <div class="dropdown">
         <div class="dropbtn"><i class="fa fa-chevron-circle-down large-icon"></i>
           <div class="dropdown-content">
@@ -25,18 +26,19 @@
         </div>
       </div>
       <a href="/" class="right-link" >Home</a>
-      <span class="right-link">Signed in as: <%= current_user.name %></span>
-         <%= image_tag current_user.avatar_url, size: User::AVATAR_SIZES[:small] if current_user.avatar? %>
-    <% else %>
+      <%= image_tag current_user.avatar_url, size: User::AVATAR_SIZES[:small], class: "right-link" if current_user.avatar? %>
+      <span class="right-link username"><%= current_user.name %></span><span class="right-link">Signed in as: </span>
+      <% else %>
       <%= link_to 'Sign in', sign_in_path %>
     <% end %>
   </nav>
+  
     <div id="flash">
       <% flash.each do |key, value| %>
-        <div class="flash <%= key %>"><%= value %></div>
+        <div class="flash flash-<%= key %>">
+          <%= value %>
+        </div>
       <% end %>
-    </div>
-
     <%= yield %>
     <!-- Add same styling as header //font & background colour. Container bottom of window with no padding -->
     <footer>
@@ -44,6 +46,7 @@
         <!-- Add styling to center -->
         <p>Made with love by the #April2017 <a class="footer-link" href="http://makersacademy.com">Makers Academy</a> cohort</p>
       </div>
+      
     </footer>
   </body>
 </html>
