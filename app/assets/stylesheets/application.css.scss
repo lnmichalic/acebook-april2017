@@ -127,7 +127,7 @@ nav {
 }
 
 .header-buffer {
-  padding-top: 80px;
+  padding-top: 120px;
 }
 
 .field input {
@@ -164,4 +164,22 @@ nav {
 
 #col-right {
   float: right;
+}
+
+.new-posts {
+  color: white;
+  background: #b26e6e;
+  padding: 15px 20px;
+  display: block;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 14px;
+  position: fixed;
+  min-width:100%;
+  margin-top: 80px;
+}
+
+.new-posts:hover {
+    background: grey;
 }

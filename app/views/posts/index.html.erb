@@ -1,3 +1,5 @@
+
+
 <% @posts.order(created_at: :desc).each do |post| %>
 
   <div id="post">
@@ -39,8 +41,4 @@
     </div>
   </div>
 
-  <% end %>
-
-  <%= link_to new_post_path, id: "new-posts" do %>
-    New post
   <% end %>

@@ -30,8 +30,14 @@
     <% else %>
     <%= link_to 'Sign in', sign_in_path %>
     <% end %>
+
   </nav>
-  <div class="header-buffer"></div>
+  <%= link_to new_post_path, class: "new-posts" do %>
+    New post
+  <% end %>
+
+  <div class="header-buffer">
+  </div>
 
   <div id="flash">
     <% flash.each do |key, value| %>
