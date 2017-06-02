@@ -1,18 +1,20 @@
 <% @posts.order(created_at: :desc).each do |post| %>
 
   <div id="post">
-    <div id="post-body">
+    <div class="post-body">
       <% if post.image_url %>
         <%= image_tag post.image_url.to_s, height: Post::IMAGE_HEIGHT %>
       <% end %>
       <%= post_presenter(post) %>
 
     </div>
+
     <div id="post-footer">
       <div id="col-left">
-        By: <%= post.user.name %> at <%= time_and_date(post) %>
+        By: <%= image_tag post.user.avatar.to_s, size: User::AVATAR_SIZES[:small] %> <%= post.user.name %> at <%= time_and_date(post) %>
+
       </div>
-      <div id="col-right">
+      <div class="float-right">
         <% if current_user %>
           <%= form_tag("/likes", method: "post") do %>
             <%= hidden_field_tag(:user_id, current_user.id) %>
@@ -23,23 +25,31 @@
         <% end %>
       </div>
     </div>
-    <div>
-      <h3>Comments</h3>
-      <% post.comments.each do |comment| %>
-        <p> <%= comment.user.name %> said: <%= comment.body %></p>
-      <% end %>
-    </div>
-    <div>
-      Add a comment:
-      <%= form_for([post, post.comments.build]) do |comment| %>
-        <%= comment.hidden_field(:user_id, value: current_user.id) %>
-        <p> <%= comment.text_area :body %></p>
-        <p> <%= comment.submit %> </p>
-      <% end %>
+
+    <!-- Another div for comment form and comments  -->
+    <div class='comment-container'>
+
+      <!-- Comments are listed in this part of the div -->
+      <div class='comment-list-item'>
+        <% post.comments.each do |comment| %>
+          <p> <span class='comment-user-name'> <%= comment.user.name %>: </span><%= comment.body %></p>
+        <% end %>
+      </div>
+
+      <!-- Here is where the comment form lives -->
+      <div class='comment-form'>
+        <div class='comment-col-left float-left'>
+          <%= form_for([post, post.comments.build]) do |comment| %>
+            <%= comment.hidden_field(:user_id, value: current_user.id) %>
+            <%= comment.text_field :body, placeholder: 'Write a comment... ✏️', class: 'comment-input-box float-left' %>
+            <%= comment.submit class: 'hidden' %>
+          <% end %>
+        </div>
+      </div>
+
     </div>
   </div>
-
-  <% end %>
+<% end %>
 
   <%= link_to new_post_path, id: "new-posts" do %>
     New post
