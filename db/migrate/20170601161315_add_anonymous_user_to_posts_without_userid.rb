@@ -1,4 +1,3 @@
-
 class AddAnonymousUserToPostsWithoutUserid < ActiveRecord::Migration[5.1]
   def up
     password = (0...15).map { ('a'..'z').to_a[rand(25)] }.join
