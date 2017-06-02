@@ -1,5 +1,5 @@
 body {
-  background-image: asset-data-url("MAbg2.png");
+  background-image: asset-data-url("MAbg5.png");
   background-size: cover;
   background-attachment: fixed;
 }
@@ -7,6 +7,7 @@ body {
 .new-user {
   margin: 0 auto;
   margin-top: 20vh;
+
 }
 
 .sign-up-form {
@@ -16,28 +17,8 @@ body {
 
 .welcome-title {
   color: #fff;
-  font-size: 50px;
+  font-size: 60px;
   text-align: right;
-}
-
-.welcome-text-quote {
-  font-size: 30px;
-    color: #fff;
-    font-weight: 400;
-    float: right;
-    text-align: right;
-    font-style: italic;
-    margin-left: 100px;
-}
-
-.welcome-text-content {
-  font-size: 20px;
-    color: #fff;
-    font-weight: 400;
-    float: right;
-    text-align: right;
-    margin-left: 100px;
-    margin-top: 20px;
 }
 
 .welcome-text-container {
@@ -49,4 +30,34 @@ body {
   float: left;
   width: 50%;
   margin-top: 20vh;
+}
+
+#slides {
+  position: relative;
+  height: 300px;
+  padding: 0px;
+  margin: 0px;
+  list-style-type: none;
+}
+
+.slide {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: 1;
+  transition: opacity 2s;
+}
+
+.showing {
+  opacity: 1;
+  z-index: 2;
+}
+
+.slide {
+  font-size: 30px;
+  color: #fff;
+  font-style: italic;
 }
