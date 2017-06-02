@@ -1,5 +1,5 @@
 <div id='clearance'>
-  <h2>Sign up Now!!</h2>
+  <h2>Sign up now!!</h2>
 
   <%= form_for @user, html: {class: 'new-user'} do |form| %>
 
@@ -14,10 +14,12 @@
     <div class='password-field info'>
       <%= form.password_field :password, placeholder: "Password..." %>
     </div>
-
-    <div class='text-field'>
-      <%= form.label :avatar %>
-      <%= form.file_field :avatar %>
+    <div class="choose-file">
+      <input id="upload_file" placeholder="Avatar File" disabled="disabled" />
+    </div>
+    <div class='file-upload'>
+        Choose Avatar
+      <%= form.file_field :avatar, class: "upload" %>
     </div>
 
     <div class='submit-field'>
