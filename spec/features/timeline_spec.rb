@@ -41,11 +41,10 @@ end
 RSpec.feature 'Users can post messages to the timeline', type: :feature do
   scenario 'Posts show the name of posting user' do
     sign_in
-    user = User.first
     click_link 'New post'
     attach_file('post_image', Rails.root + 'spec/support/assets/owl.jpg')
     fill_in 'Message', with: 'Test post'
     click_button 'Submit'
-    expect(page).to have_content "By: #{user.name}"
+    expect(page).to have_content "By: TestyMcTestFace"
   end
 end

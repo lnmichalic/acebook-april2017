@@ -27,3 +27,7 @@ We're using:
 
 * RSpec for testing
 * [Clearance](https://github.com/thoughtbot/clearance) for user authentication
+
+## Images Resized
+
+Uploaded images are all same height, keep the correct aspect ratio.
