@@ -1,57 +1,50 @@
 <% @posts.order(created_at: :desc).each do |post| %>
-
-  <div id="post">
-    <div class="post-body">
-      <% if post.image_url %>
-        <%= image_tag post.image_url.to_s, height: Post::IMAGE_HEIGHT %>
+<div id="post">
+  <div class="post-body">
+    <% if post.image_url %>
+    <%= image_tag post.image_url.to_s, height: Post::IMAGE_HEIGHT %>
+    <% end %>
+    <%= post_presenter(post) %>
+  </div>
+  <div id="post-footer">
+    <div id="col-left">
+      By: <%= image_tag post.user.avatar.to_s, size: User::AVATAR_SIZES[:small] %> <%= post.user.name %> at <%= time_and_date(post) %>
+    </div>
+    <div class="float-right">
+      <% if current_user %>
+      <%= form_tag("/likes", method: "post") do %>
+      <%= hidden_field_tag(:user_id, current_user.id) %>
+      <%= hidden_field_tag(:post_id, post.id) %>
+      <% already_liked = post.likes.any?{ |like| like.user_id == current_user.id } %>
+      <%= submit_tag "Like (#{post.likes.count})", :disabled => already_liked %>
       <% end %>
-      <%= post_presenter(post) %>
+      <% end %>
     </div>
-
-    <div id="post-footer">
-      <div id="col-left">
-        By: <%= image_tag post.user.avatar.to_s, size: User::AVATAR_SIZES[:small] %> <%= post.user.name %> at <%= time_and_date(post) %>
-
-      </div>
-      <div class="float-right">
-        <% if current_user %>
-          <%= form_tag("/likes", method: "post") do %>
-            <%= hidden_field_tag(:user_id, current_user.id) %>
-            <%= hidden_field_tag(:post_id, post.id) %>
-            <% already_liked = post.likes.any?{ |like| like.user_id == current_user.id } %>
-            <%= submit_tag "Like (#{post.likes.count})", :disabled => already_liked %>
-          <% end %>
-        <% end %>
-      </div>
-    </div>
-
-    <!-- Another div for comment form and comments  -->
+  </div>
+  <!-- Another div for comment form and comments  -->
   <div class='comment-container'>
-
     <!-- Comments are listed in this part of the div -->
     <div class='comment-list-item'>
       <% post.comments.each do |comment| %>
-        <p> <span class='comment-user-name'> <%= comment.user.name %>: </span><%= comment.body %></p>
-        <% if comment.user.id == current_user.id %>
-          <%= link_to 'Delete Comment',  post_comment_path(comment.id, comment),   method: :delete, data: { confirm: 'Are you sure?' } %>
-        <% end %>
+      <p> <span class='comment-user-name'> <%= comment.user.name %>: </span><%= comment.body %></p>
+      <% if comment.user.id == current_user.id %>
+      <%= link_to 'Delete Comment',  post_comment_path(comment.id, comment),   method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% end %>
       <% end %>
     </div>
-
     <!-- Here is where the comment form lives -->
-       <div class='comment-form'>
-         <div class='comment-col-left float-left'>
-           <%= form_for([post, post.comments.build]) do |comment| %>
-             <%= comment.hidden_field(:user_id, value: current_user.id) %>
-             <%= comment.text_field :body, placeholder: 'Write a comment... ✏️', class: 'comment-input-box float-left' %>
-             <%= comment.submit class: 'hidden' %>
-           <% end %>
-         </div>
-       </div>
-     </div>
-   </div>
- <% end %>
-
-   <%= link_to new_post_path, id: "new-posts" do %>
-     New post
-   <% end %>
+    <div class='comment-form'>
+      <div class='comment-col-left float-left'>
+        <%= form_for([post, post.comments.build]) do |comment| %>
+        <%= comment.hidden_field(:user_id, value: current_user.id) %>
+        <%= comment.text_field :body, placeholder: 'Write a comment... ✏️', class: 'comment-input-box float-left' %>
+        <%= comment.submit class: 'hidden' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>
+<%= link_to new_post_path, id: "new-posts" do %>
+New post
+<% end %>
