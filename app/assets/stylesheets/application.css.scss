@@ -29,8 +29,10 @@ body {
 }
 
 nav {
-  background-color: #445561;
-  height: 50px;
+  background-color: #964040;
+  height: 80px;
+  position: fixed;
+  min-width:100%;
 }
 
 #page-logo {
@@ -38,8 +40,8 @@ nav {
   background-image: asset-data-url("acebook_logo.png");
   background-size: contain;
   background-repeat: no-repeat;
-  width: 100px;
-  height: 50px;
+  width: 200px;
+  height: 100px;
   margin-top: 10px;
   margin-left: 10px;
 }
@@ -124,12 +126,24 @@ nav {
   font-size: 20px !important;
 }
 
+.username {
+  font-weight: bold;
+}
+
+.header-buffer {
+  padding-top: 80px;
+}
+
+.field input {
+  width:120px;
+}
+
 #post {
   padding: 3px 3px 3px 3px;
   border-style: solid;
   border-width: 2px;
-  border-color: #445561;
-  margin-top: 40px;
+  border-color: #912f2f;
+  margin-top: 20px;
   margin-right: 20%;
   margin-left: 20%;
   min-width: 500px;

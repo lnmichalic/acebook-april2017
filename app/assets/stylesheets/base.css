@@ -1,6 +1,12 @@
 
 body {
-  background-color:  white;
+  font-family: futura-pt, sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  padding: 0;
+  text-rendering: optimizeLegibility;
+  letter-spacing: 0.05em;
+  margin: 0 0 250px;
 }
 
 html * {
