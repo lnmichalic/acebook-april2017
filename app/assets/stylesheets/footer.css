@@ -3,8 +3,8 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  padding-top: 25px;
-  padding-bottom: 25px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   background-color: #964040;
 }
 
@@ -13,10 +13,11 @@
   display: block;
   text-align: center;
   margin: 0 auto;
+  font-size: 20px
 }
 
 .footer-link {
-  font-size: 50px;
+  font-size: 20px;
   text-decoration: none;
   color: #fff;
 }
